@@ -47,7 +47,7 @@ class ComposeBaseActivity:AppCompatActivity(),Serializable {
             NavHost(navController = navController, startDestination = "GuidePage") {
                 composable("GuidePage") { ButtonFeedView(buttonList = viewModel.baseFunctionButtonInfoList)}
                 composable("TabPage") { TabDemoScreenView()}
-                composable("recyclerView") { RecyclerViewDemoScreenView()}
+                composable("recyclerView") { RecyclerViewDemoScreenView(navController)}
                 composable("viewPager") { ViewPagerDemoScreenView() }
             }
 

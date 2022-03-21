@@ -39,7 +39,8 @@ fun ViewPagerDemoScreenView() {
         BottomBar(pagerState.currentPage) { page ->
             // 点击标签页后，在协程里翻页
             scope.launch {
-                pagerState.animateScrollToPage(page = page)
+//                pagerState.animateScrollToPage(page = page)
+                pagerState.scrollToPage(page)
             }
         }
     }

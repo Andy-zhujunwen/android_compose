@@ -45,7 +45,7 @@ fun BottomBar(selectedTab: Int, onClickedChanged: (Int) -> Unit) {
         )
 
         TabItem(
-            if (selectedTab == 1) R.drawable.tab1selected else R.drawable.tab1unselected,"运动",
+            if (selectedTab == 1) R.drawable.playgame else R.drawable.shopping,"娱乐",
             Modifier.weight(1f)
                 .clickable {
                     onClickedChanged.invoke(1)
@@ -53,7 +53,7 @@ fun BottomBar(selectedTab: Int, onClickedChanged: (Int) -> Unit) {
         )
 
         TabItem(
-            if (selectedTab == 2) R.drawable.tab1selected else R.drawable.tab1unselected,"运动",
+            if (selectedTab == 2) R.drawable.dog else R.drawable.cat,"宠物",
             Modifier.weight(1f)
                 .clickable {
                     onClickedChanged.invoke(2)
@@ -61,7 +61,7 @@ fun BottomBar(selectedTab: Int, onClickedChanged: (Int) -> Unit) {
         )
 
         TabItem(
-            if (selectedTab == 3) R.drawable.tab1selected else R.drawable.tab1unselected,"运动",
+            if (selectedTab == 3) R.drawable.watermelon else R.drawable.apple,"运动",
             Modifier.weight(1f)
                 .clickable {
                     onClickedChanged.invoke(3)

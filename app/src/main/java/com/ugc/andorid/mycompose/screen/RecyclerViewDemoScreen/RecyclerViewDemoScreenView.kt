@@ -5,10 +5,7 @@ import android.widget.Button
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -27,13 +24,19 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.google.accompanist.pager.ExperimentalPagerApi
 import com.ugc.andorid.mycompose.R
+import com.ugc.andorid.mycompose.screen.TabDemoScreen.TabDemoScreenView
+import com.ugc.andorid.mycompose.screen.ViewPagerDemoScreen.ViewPagerDemoScreenView
 
+@OptIn(ExperimentalPagerApi::class)
 @Composable
-fun RecyclerViewDemoScreenView() {
+fun RecyclerViewDemoScreenView(navController: NavController) {
     val colorList = mutableListOf<ColorItem>(
         ColorItem(Color.Blue),
         ColorItem(Color.Red),
@@ -53,15 +56,17 @@ fun RecyclerViewDemoScreenView() {
         ImageItem(R.drawable.image1),
         ImageItem(R.drawable.image2),
         ImageItem(R.drawable.image3),
+        ImageItem(R.drawable.image1),
+        ImageItem(R.drawable.image2),
+        ImageItem(R.drawable.image3),
+        ImageItem(R.drawable.image1),
+        ImageItem(R.drawable.image2),
+        ImageItem(R.drawable.image3),
     )
 
-    val navControlloer = rememberNavController()
-    NavHost(navController = navControlloer,startDestination = "RecyclerViewDemoScreenView") {
-        composable("RecyclerViewDemoScreenView") { Textt() }
-    }
     val buttonList = mutableListOf<ButtonItem>(
-        ButtonItem("Recycler Demo1"){
-            navControlloer.navigate("Demo1")
+        ButtonItem("Recycler Demo1") {
+            navController.navigate("TabPage")
         }
     )
 
@@ -153,7 +158,10 @@ fun ButtonFeedView(buttonList: List<ButtonItem>) {
 
 @Composable
 fun Textt(){
-    androidx.compose.material.Text(text = "123")
+    Column(Modifier.size(500.dp, 500.dp).background(Color.Cyan)) {
+        Text(text = "123")
+    }
+
 }
 
 data class ColorItem(val color: Color)
