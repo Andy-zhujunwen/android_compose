@@ -65,8 +65,8 @@ fun RecyclerViewDemoScreenView(navController: NavController) {
     )
 
     val buttonList = mutableListOf<ButtonItem>(
-        ButtonItem("Recycler Demo1") {
-            navController.navigate("TabPage")
+        ButtonItem("Grid Demo") {
+            navController.navigate("Grid")
         }
     )
 

@@ -24,6 +24,7 @@ import androidx.navigation.compose.rememberNavController
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.ugc.andorid.mycompose.screen.TabDemoScreen.TabDemoScreenView
 import com.ugc.andorid.mycompose.ViewModel.ComposeBaseViewModel
+import com.ugc.andorid.mycompose.screen.RecyclerViewDemoScreen.RecyclerGridScreen.RecyclerGridScreenView
 import com.ugc.andorid.mycompose.screen.RecyclerViewDemoScreen.RecyclerViewDemoScreenView
 import com.ugc.andorid.mycompose.screen.ViewPagerDemoScreen.ViewPagerDemoScreenView
 import com.ugc.andorid.mycompose.ui.common.ButtonFeedView
@@ -49,6 +50,7 @@ class ComposeBaseActivity:AppCompatActivity(),Serializable {
                 composable("TabPage") { TabDemoScreenView()}
                 composable("recyclerView") { RecyclerViewDemoScreenView(navController)}
                 composable("viewPager") { ViewPagerDemoScreenView() }
+                composable("Grid") { RecyclerGridScreenView() }
             }
 
 
